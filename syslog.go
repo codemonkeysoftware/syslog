@@ -9,7 +9,7 @@ import (
 	gsyslog "log/syslog"
 )
 
-func NewLogger(p Priority, logFlag int) (*log.Logger, error) { return nil, nil }
+func NewLogger(p Priority, logFlag int) (*log.Logger, error) { return gsyslog.NewLogger(p, logFlag) }
 
 type Priority = gsyslog.Priority
 
@@ -42,15 +42,18 @@ const (
 	LOG_CRON     = gsyslog.LOG_CRON
 	LOG_AUTHPRIV = gsyslog.LOG_AUTHPRIV
 	LOG_FTP      = gsyslog.LOG_FTP
-
-	LOG_LOCAL0 = gsyslog.LOG_LOCAL0
-	LOG_LOCAL1 = gsyslog.LOG_LOCAL1
-	LOG_LOCAL2 = gsyslog.LOG_LOCAL2
-	LOG_LOCAL3 = gsyslog.LOG_LOCAL3
-	LOG_LOCAL4 = gsyslog.LOG_LOCAL4
-	LOG_LOCAL5 = gsyslog.LOG_LOCAL5
-	LOG_LOCAL6 = gsyslog.LOG_LOCAL6
-	LOG_LOCAL7 = gsyslog.LOG_LOCAL7
+	_            // unused
+	_            // unused
+	_            // unused
+	_            // unused
+	LOG_LOCAL0   = gsyslog.LOG_LOCAL0
+	LOG_LOCAL1   = gsyslog.LOG_LOCAL1
+	LOG_LOCAL2   = gsyslog.LOG_LOCAL2
+	LOG_LOCAL3   = gsyslog.LOG_LOCAL3
+	LOG_LOCAL4   = gsyslog.LOG_LOCAL4
+	LOG_LOCAL5   = gsyslog.LOG_LOCAL5
+	LOG_LOCAL6   = gsyslog.LOG_LOCAL6
+	LOG_LOCAL7   = gsyslog.LOG_LOCAL7
 )
 
 type Writer = gsyslog.Writer
