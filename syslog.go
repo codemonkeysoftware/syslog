@@ -11,9 +11,11 @@ import (
 
 func NewLogger(p Priority, logFlag int) (*log.Logger, error) { return gsyslog.NewLogger(p, logFlag) }
 
-func New(priority Priority, tag string) (*Writer, error)
+func New(priority Priority, tag string) (*Writer, error) { return gsyslog.New(priority, tag) }
 
-func Dial(network, raddr string, priority Priority, tag string) (*Writer, error)
+func Dial(network, raddr string, priority Priority, tag string) (*Writer, error) {
+	return gsyslog.Dial(network, raddr, priority, tag)
+}
 
 type Priority = gsyslog.Priority
 
